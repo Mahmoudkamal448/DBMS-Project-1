@@ -16,7 +16,7 @@ echo "******************************************"
 read -p "Please enter the table name: " selected_table
 
 # check if the name is valid
-while [ `is_vaild_name $selected_table` == false ]
+while [ `is_vaild_name "$selected_table"` == false ]
 do
     echo "NOT valid table name ❌"
     read -p "Please try again: " selected_table 

@@ -17,7 +17,7 @@ echo "******************************************"
 read -p "Please enter the database name: " db_name
 
 # check if the name is valid
-while [ `is_vaild_name $db_name` == false ]
+while [ `is_vaild_name "$db_name"` == false ]
 do
     echo "you can not use this name for your database ❌"
     read -p "Please try again: " db_name 

@@ -82,7 +82,7 @@ validate_col_name ()
     typeset valid=1;
 
     # check if the name is valid
-    if [ `is_vaild_name $col_n` == false ]
+    if [ `is_vaild_name "$col_n"` == false ]
     then
         echo "NOT valid column name ❌"
         valid=0;
@@ -160,9 +160,9 @@ function select_by_val
         # get the colmun name from the user
         read -p "Please enter the column name: " col_n
 
-        while [[ `validate_col_name $col_n` != "valid" ]]
+        while [[ `validate_col_name` != "valid" ]]
         do
-            validate_col_name $col_n
+            validate_col_name
             ask_loop table_selected.sh
             read -p "Try again: " col_n
         done
@@ -180,7 +180,7 @@ function select_by_val
         arr="${maxs[@]}"
         
         # start searching
-        awk -F: -v nor=$no_of_rows -v col_no=$col_no -v val=$value -v arr="$arr" '
+        awk -F: -v nor=$no_of_rows -v col_no=$col_no -v val="$value" -v arr="$arr" '
         BEGIN {
             msg = "   No any data matches the search criteria";
             mat = 0;

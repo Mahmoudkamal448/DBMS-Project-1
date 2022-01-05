@@ -19,7 +19,7 @@ function validate_pk_col
 function validate_col_name
 {
     # check if the name is valid
-    if [ `is_vaild_name $col_n` == false ]
+    if [ `is_vaild_name "$col_n"` == false ]
     then
         echo "NOT valid column name ❌"
 

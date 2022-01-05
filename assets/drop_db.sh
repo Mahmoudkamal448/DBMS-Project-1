@@ -17,7 +17,7 @@ read -p "Please enter the database name: " db_name
 
 
 # check valid name
-if [ `is_vaild_name $db_name` == true ]
+if [ `is_vaild_name "$db_name"` == true ]
 then
     # check if is exist and in current dir
     if [ -d db_list/$db_name  ]

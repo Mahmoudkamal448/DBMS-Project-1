@@ -38,7 +38,7 @@ validate_col_name ()
     typeset valid=1;
 
     # check if the name is valid
-    if [ `is_vaild_name $col_name` == false ]
+    if [ `is_vaild_name "$col_name"` == false ]
     then
         echo "you can not use this name for your column ❌"
         valid=0;
@@ -71,7 +71,7 @@ echo "******************************************"
 read -p "Please enter the table name: " t_name
 
 # check if the name is valid
-while [ `is_vaild_name $t_name` == false ]
+while [ `is_vaild_name "$t_name"` == false ]
 do
     echo "you can not use this name for your table ❌"
     read -p "Please try again: " t_name 
@@ -108,9 +108,9 @@ do
         
     fi
 
-    while [[ `validate_col_name $col_name` != "valid" ]]
+    while [[ `validate_col_name` != "valid" ]]
     do
-        validate_col_name $col_name
+        validate_col_name
         read -p "Try again: " col_name
     done
 

@@ -16,7 +16,7 @@ echo "******************************************"
 read -p "Please enter the table name: " t_name
 
 # check if the name is valid
-while [ `is_vaild_name $t_name` == false ]
+while [ `is_vaild_name "$t_name"` == false ]
 do
     echo "NOT valid Table name ❌"
     read -p "Please try again: " t_name 
@@ -41,11 +41,19 @@ do
     echo
 done
 
-rm -r db_list/$connected_db/tables/$t_name
-rm -r db_list/$connected_db/meta/$t_name
+if [ ${ans^^} == 'Y' ]
+then
+    
+    rm -r db_list/$connected_db/tables/$t_name
+    rm -r db_list/$connected_db/meta/$t_name
 
-echo "$t_name has been successfully deleted ✅"
-echo "******************************************"
+    echo "$t_name has been successfully deleted ✅"
+    echo "******************************************"
+
+else
+    echo "Cancelled ❌"
+    echo "******************************************"
+fi
 
 
 end_selection "Delete another table" drop_table.sh

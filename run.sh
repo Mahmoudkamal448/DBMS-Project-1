@@ -28,6 +28,8 @@ function is_vaild_name
     $1 == *']'* || 
     $1 == *'['* || 
     $1 == *'-'* || 
+    $1 == *' '* || 
+    `echo $1 | grep '*' | wc -c` > 0 || 
     $1 == "db_list" || 
     $1 == "run.sh" || 
     $1 == "meta" || 

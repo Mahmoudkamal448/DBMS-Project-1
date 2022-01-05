@@ -16,7 +16,7 @@ echo "******************************************"
 read -p "Please enter the database name: " connected_db
 
 # check if the name is valid
-while [ `is_vaild_name $connected_db` == false ]
+while [ `is_vaild_name "$connected_db"` == false ]
 do
     echo "NOT valid database name ❌"
     read -p "Please try again: " connected_db 
