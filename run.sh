@@ -89,14 +89,14 @@ function end_selection
 }
 
 
-echo "+----------------------------------------+"
-echo "|                                        |"
-echo "|       Wellcome to DBMS project         |"
-echo "|  Made with 💗 by Abd El-Rahman & Mark  |"
-echo "|                                        |"
-echo "+----------------------------------------+"
+echo "   +----------------------------------------+"
+echo "   |                                        |"
+echo "   |       Wellcome to DBMS project         |"
+echo "   |  Made with 💗 by Abd El-Rahman & Mark  |"
+echo "   |                                        |"
+echo "   +----------------------------------------+"
 
-PS3="Please select an option: "
+PS3=" Please select an option: "
 
 select option in "Create Database" "List Databases" "Connect To Databases" "Drop Database" "Exit"
     do

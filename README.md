@@ -39,4 +39,4 @@ please make sure to update tests as appropriate.
 
 # Screenshot
 
-![img](https://github.com/AbdEl-RahmanKhaled/DBMS-Project/blob/master/img/pic.png)
+![img](https://github.com/AbdEl-RahmanKhaled/DBMS-Project/blob/master/img/img.png)
