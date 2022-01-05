@@ -136,6 +136,7 @@ function select_all
     end_selection "Make another selection" select_from_table.sh
 }
 
+
 # to select from the table by value of column
 function select_by_val
 {

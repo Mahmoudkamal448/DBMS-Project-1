@@ -7,7 +7,7 @@ function validate_pk_col
         echo "NOT valid input ❌"
 
     # check if value of pk is exists or not
-    elif [ `cat db_list/$connected_db/tables/$selected_table | cut -d: -f1 | grep "$pk" | wc -l` -eq 0 ]
+    elif [ `cat db_list/$connected_db/tables/$selected_table | cut -d: -f1 | grep -w "$pk" | wc -l` -eq 0 ]
     then
         echo "$pk NOT exist ❌"
 
@@ -86,7 +86,7 @@ function update_by_pk
     if [[ $col_type == "int" && "$value" != "" ]]
     then
         # ensure the user input is digit
-        while [[ ! $value =~ ^['0-9']+$ ]]
+        while [[ ! "$value" =~ ^['0-9']+$ ]]
         do
             echo "This column accept integers only ❌"
             ask_loop table_selected.sh

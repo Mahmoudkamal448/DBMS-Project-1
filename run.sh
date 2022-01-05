@@ -20,25 +20,33 @@ ex()
     exit
 }
 
-# to check if name restricted or not
+
+# old Validation
+# "!;@#$\'%^\&?*(){}\"<>/\\|+,.=~"
+# $1 == *']'* || 
+# $1 == *'['* || 
+# $1 == *'-'* || 
+# $1 == *' '* || 
+# `echo $1 | grep '*' | wc -c` > 0 || 
+# if [[ $2 != "col" ]]
+# then 
+#     if [[ $1 == "db_list" || 
+#     $1 == "run.sh" || 
+#     $1 == "meta" || 
+#     $1 == "tables" ]]
+#     then
+#         va=false
+#     fi
+# fi
+
+# to check if name valid or not
 function is_vaild_name
 {
-    if [[ $1 =~ ["!;@#$\'%^\&?*(){}\"<>/\\|+,.=~"] || 
-    $1 =~ ^['0-9'] || 
-    $1 == *']'* || 
-    $1 == *'['* || 
-    $1 == *'-'* || 
-    $1 == *' '* || 
-    `echo $1 | grep '*' | wc -c` > 0 || 
-    $1 == "db_list" || 
-    $1 == "run.sh" || 
-    $1 == "meta" || 
-    $1 == "tables" ||
-    $1 == "" ]]
+    if [[ ! $1 =~ ^[A-Za-z0-9'_']+$ || $1 =~ ^['0-9'] || $1 == "" ]]
     then 
-        echo false;
+        echo false
     else
-        echo true;
+        echo true
     fi
 }
 

@@ -9,7 +9,7 @@ validate_input ()
     then
       echo -e "invalid input, primary key doesn't accept null ❌" 
       valid=0
-    elif [[ `awk -F: '{if ( $1 == '"$input"' ) print 0; }' db_list/$connected_db/tables/$selected_table` == 0 ]]
+    elif [[ `awk -F: '{if ( $1 == "'"$input"'" ) print 0; }' db_list/$connected_db/tables/$selected_table` == 0 ]]
     then 
       echo -e "invalid input, primary key must be uniqe ❌"
       valid=0

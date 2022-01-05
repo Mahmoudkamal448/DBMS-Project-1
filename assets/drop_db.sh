@@ -22,9 +22,29 @@ then
     # check if is exist and in current dir
     if [ -d db_list/$db_name  ]
     then
-        rm -r db_list/$db_name/
-        echo "$db_name has been successfully deleted  ✅"
-        echo "******************************************" 
+
+        # ask the user if 
+        read -n1 -p "Are you sure to delete $db_name ? yY|nN: " ans
+        echo
+
+        # ensure the user input is Y or N
+        until [[ ${ans^^} == 'Y' || ${ans^^} == 'N' ]]
+        do
+            echo "NOT vaild input ❌"
+            read -n1 -p "Try again: " ans
+            echo
+        done
+
+        if [ ${ans^^} == 'Y' ]
+        then            
+            rm -r db_list/$db_name/
+            echo "$db_name has been successfully deleted  ✅"
+            echo "******************************************" 
+
+        else
+            echo "Cancelled ❌"
+            echo "******************************************"
+        fi        
     else
         echo "$db_name database not exist ❌"
         try_again drop_db.sh
