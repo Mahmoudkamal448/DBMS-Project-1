@@ -34,7 +34,7 @@ Or press "Code" button then chose "Download zip"
 
 # Screen Shot
 
-![img](https://github.com/AbdEl-RahmanKhaled/DBMS-Project/tree/master/img/pic.png)
+![img](https://github.com/AbdEl-RahmanKhaled/DBMS-Project/blob/master/img/pic.png)
 
 
 # Contributers
