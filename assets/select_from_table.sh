@@ -15,14 +15,14 @@ typeset maxs[$no_of_cols]
 # to get the max len in each column
 for ((i=1; i<=$no_of_cols; i++))
 do
-    maxs[$i]=`awk -F: -v ind=$i '
-    BEGIN {max = 0}
-    {
-        if (length($'$i') > max)
-        {
-            max = length($'$i')
-        }
-    } END { print max+3 }' db_list/$connected_db/tables/$selected_table`
+    maxcol=`awk -F: -v ind=$i ' BEGIN {max = 0} { if (length($'$i') > max) { max = length($'$i') } } END { print max+3 }' db_list/$connected_db/tables/$selected_table`
+    maxhead=`awk -F: -v ind=$i ' BEGIN {max = 0} { if (length($1) > max && NR == '$i') { max = length($1) } } END { print max+3 }' db_list/$connected_db/meta/$selected_table`
+    if [ $maxcol -gt $maxhead ]
+    then
+        maxs[$i]=$maxcol
+    else
+        maxs[$i]=$maxhead
+    fi
 done
 
 
