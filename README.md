@@ -9,7 +9,7 @@ Use the version control tool [git](https://git-scm.com/) to clone the project.
     cd DBMS-Project
     ./run.sh
 
-Or press "Code" button then chose "Download zip"
+Or press "<span style="color:green">Code</span>" button then chose "Download ZIP"
 
 # DataBase layer
 
@@ -32,9 +32,11 @@ Or press "Code" button then chose "Download zip"
 - Delete From Table
 - Update Table
 
-# Screen Shot
+# Contributing
+Pull requests are welcome. For major changes , please open an issue first to discuss what you would like to change.
+
+please make sure to update tests as appropriate.
+
+# Screenshot
 
 ![img](https://github.com/AbdEl-RahmanKhaled/DBMS-Project/blob/master/img/pic.png)
-
-
-# Contributers
