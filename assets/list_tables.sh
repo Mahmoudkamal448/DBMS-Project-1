@@ -29,5 +29,16 @@ else
     echo "|     No Tables to show      |"
     echo "+----------------------------+"
     
-   
+    #show some options
+    select option in "Create Table" "Back"
+    do
+        case $option in 
+            "Create Table") . ./assets/create_table.sh 
+                ;;
+            "Back") . ./assets/db_connected.sh
+                ;;
+            *) echo "NOT valid option ❌" 
+                ;;
+        esac
+    done   
 fi

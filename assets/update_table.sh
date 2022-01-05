@@ -178,17 +178,17 @@ function update_by_col
 
 
 select option in "Update by primary key" "Update by column value" "Back" "Exit"
-    do
-        case $option in
-           "Update by primary key") update_by_pk
-                ;;
-            "Update by column value") update_by_col
-                ;;
-            "Back") . ./assets/table_selected.sh
-                ;;
-            "Exit") ex
-                ;;
-            *) echo "NOT valid option ❌" 
-                ;;
-        esac    
+do
+    case $option in
+        "Update by primary key") update_by_pk
+            ;;
+        "Update by column value") update_by_col
+            ;;
+        "Back") . ./assets/table_selected.sh
+            ;;
+        "Exit") ex
+            ;;
+        *) echo "NOT valid option ❌" 
+            ;;
+    esac    
 done

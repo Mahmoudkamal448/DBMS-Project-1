@@ -2,26 +2,6 @@
 
 clear
 
-
-function is_vaild_name
-{
-    if [[ $1 =~ ["!@#$\'%^\&?*(){}\"<>/\\|+,.=~"] || 
-    $1 =~ ^['0-9'] || 
-    $1 == *']'* || 
-    $1 == *'['* || 
-    $1 == *'-'* || 
-    $1 == "db_list" || 
-    $1 == "run.sh" || 
-    $1 == "meta" || 
-    $1 == "tables" ||
-    $1 == "" ]]
-    then 
-        echo false;
-    else
-        echo true;
-    fi
-}
-
 echo "+----------------------------------------+"
 echo "|                                        |"
 echo "|  You are about to connect to Database  |"
@@ -50,7 +30,4 @@ then
 fi
 
 
-echo "connected"
-
-
-
+. ./assets/db_connected.sh

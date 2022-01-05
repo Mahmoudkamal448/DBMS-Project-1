@@ -1,7 +1,5 @@
 #! /bin/bash
 
-no_of_cols=3
-
 validate_input ()
 {
   typeset valid=1;
@@ -77,4 +75,4 @@ echo $row >> db_list/$connected_db/tables/$selected_table
 echo "Data inserted Successfully ✅ "
 echo "***********************************************"
 
-
+end_selection "Inseret another row" insert_into_table.sh

@@ -81,11 +81,11 @@ echo "******************************************"
 select option in "Insert into Table" "Select From Table" "Delete From Table" "Update Table" "Back" "Exit"
     do
         case $option in
-           "Insert into Table") # . ./assets/insert_into_table.sh
+           "Insert into Table") . ./assets/insert_into_table.sh
                 ;;
             "Select From Table") . ./assets/select_from_table.sh
                 ;;
-            "Delete From Table") # . ./assets/delete_from_table.sh
+            "Delete From Table") . ./assets/delete_from_table.sh
                 ;;
             "Update Table") . ./assets/update_table.sh
                 ;;

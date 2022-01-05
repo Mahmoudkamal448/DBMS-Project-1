@@ -178,6 +178,7 @@ function select_by_val
         render_header
 
         arr="${maxs[@]}"
+        
         # start searching
         awk -F: -v nor=$no_of_rows -v col_no=$col_no -v val=$value -v arr="$arr" '
         BEGIN {

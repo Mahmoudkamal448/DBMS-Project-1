@@ -44,11 +44,11 @@ select option in "Create Table" "List Tables" "Drop Table" "Select Table" "Back 
         case $option in
             "Create Table") . ./assets/create_table.sh
                 ;;
-            "List Tables") # . ./assets/list_tables.sh
+            "List Tables") . ./assets/list_tables.sh
                 ;;
-            "Drop Table") # . ./assets/drop_table.sh
+            "Drop Table") . ./assets/drop_table.sh
                 ;;
-            "Select Table") # . ./assets/select_table.sh
+            "Select Table") . ./assets/select_table.sh
                 ;;
             "Back to main menu") . ./run.sh
                 ;;

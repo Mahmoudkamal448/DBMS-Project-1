@@ -101,11 +101,11 @@ PS3="Please select an option: "
 select option in "Create Database" "List Databases" "Connect To Databases" "Drop Database" "Exit"
     do
         case $option in
-            "Create Database") # . ./assets/create_db.sh
+            "Create Database") . ./assets/create_db.sh
                 ;;
             "List Databases") . ./assets/list_db.sh
                 ;;
-            "Connect To Databases") # . ./assets/connect_db.sh
+            "Connect To Databases") . ./assets/connect_db.sh
                 ;;
             "Drop Database") . ./assets/drop_db.sh
                 ;;

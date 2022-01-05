@@ -52,4 +52,4 @@ else
     echo "******************************************"
 fi
 
-
+end_selection "Delete another record" delete_from_table.sh
