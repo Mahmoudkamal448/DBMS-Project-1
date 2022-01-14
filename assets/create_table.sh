@@ -2,22 +2,6 @@
 
 clear
 
-
-data_type_selection ()
-{
-    select type in "String" "Integer"
-    do
-        case $type in 
-            "String") echo "str"; break
-                ;;
-            "Integer") echo "int"; break
-                ;;
-            *) echo "NOT valid option ❌" 
-                ;;
-        esac
-    done
-}
-
 is_col_exist ()
 {
     typeset exist=false
@@ -85,10 +69,10 @@ then
 fi
 
 # read the number of columns 
-read -p "Enter the number of columns at least 1: " no_cols
+read -p "Enter the number of columns at least 2: " no_cols
 
 # ensure the user input is digit
-while [[ ! $no_cols =~ ^['1-9']+$ ]]
+while [[ ! $no_cols =~ ^['0-9']+$ || $no_cols -lt 2 ]]
 do
     echo "NOT vaild input ❌"
     read -p "Try again: " no_cols
@@ -99,7 +83,7 @@ typeset cols[size]
 # get columns data from user
 for ((i=1; i<=$no_cols; i++))
 do
-    # get the pk column data if the answer is Y
+    # get the pk column data
     if [[ $i == 1 ]]
     then 
         read -p "Enter primary key name: " col_name
@@ -115,7 +99,19 @@ do
     done
 
     row="${col_name}:"
-    row="${row}`data_type_selection`:"
+
+    select type in "String" "Integer"
+    do
+        case $type in 
+            "String") row="${row}str:"; break
+                ;;
+            "Integer") row="${row}int:"; break
+                ;;
+            *) echo "NOT valid option ❌" 
+                ;;
+        esac
+    done
+    
 
     # add the pk column data if index 1
     if [[ $i == 1 ]]
@@ -142,6 +138,3 @@ echo "$t_name has been successfully created ✅"
 echo "******************************************"
 
 end_selection "Crate another table" create_table.sh
-
-
-
